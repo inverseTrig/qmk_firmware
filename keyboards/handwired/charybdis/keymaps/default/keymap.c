@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "trackball.h"
 
 // Layers
 enum layers {
@@ -10,6 +11,7 @@ enum layers {
     _SYM,
     _FUN,
     _BOOT,
+    _MOUSE,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -74,5 +76,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
         KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
                             KC_TRNS,  KC_TRNS,  KC_TRNS,      KC_TRNS,  KC_TRNS
+    ),
+    [_MOUSE] = LAYOUT_split(
+        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_BTN3,  KC_TRNS,  KC_TRNS,
+        KC_TRNS,  KC_TRNS,  KC_TRNS,  SNIPING,  KC_TRNS,      KC_TRNS,  KC_BTN1,  KC_BTN2,  KC_TRNS,  KC_TRNS,
+        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+                            KC_TRNS,  DRGSCRL,  KC_TRNS,      KC_TRNS,  KC_TRNS
     ),
 };
